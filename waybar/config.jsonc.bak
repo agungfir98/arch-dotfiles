@@ -1,0 +1,594 @@
+// // -*- mode: jsonc -*-
+// {
+//     // "layer": "top", // Waybar at top layer
+//     // "position": "bottom", // Waybar position (top|bottom|left|right)
+//     "height": 30, // Waybar height (to be removed for auto height)
+//     // "width": 1280, // Waybar width
+//     "spacing": 4, // Gaps between modules (4px)
+//     // Choose the order of the modules
+//     "modules-left": [
+//         "hyprland/workspaces",
+//         "hyprland/mode",
+//         "hyprland/scratchpad",
+//         "custom/media"
+//     ],
+//     "modules-center": [
+//         "hyprland/window"
+//     ],
+//     "modules-right": [
+//         "mpd",
+//         "idle_inhibitor",
+//         "pulseaudio",
+//         "network",
+//         "power-profiles-daemon",
+//         "battery",
+//         "battery#bat2",
+//         "clock",
+//         "tray",
+//         "custom/power"
+//     ],
+//     // Modules configuration
+//     "hyprland/workspaces": {
+//         "disable-scroll": true,
+//         "all-outputs": true,
+//         "warp-on-scroll": false,
+//         "format": "{name}: {icon}",
+//         "format-icons": {
+//             "1": "",
+//             "2": "",
+//             "3": "",
+//             "4": "",
+//             "5": "",
+//             "urgent": "",
+//             "active": "",
+//             "default": ""
+//         }
+//     },
+//     "keyboard-state": {
+//         "numlock": true,
+//         "capslock": true,
+//         "format": "{name} {icon}",
+//         "format-icons": {
+//             "locked": "",
+//             "unlocked": ""
+//         }
+//     },
+//     "hyprland/mode": {
+//         "format": "<span style=\"italic\">{}</span>"
+//     },
+//     "hyprland/scratchpad": {
+//         "format": "{icon} {count}",
+//         "show-empty": false,
+//         "format-icons": ["", ""],
+//         "tooltip": true,
+//         "tooltip-format": "{app}: {title}"
+//     },
+//     "mpd": {
+//         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+//         "format-disconnected": "Disconnected ",
+//         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+//         "unknown-tag": "N/A",
+//         "interval": 5,
+//         "consume-icons": {
+//             "on": " "
+//         },
+//         "random-icons": {
+//             "off": "<span color=\"#f53c3c\"></span> ",
+//             "on": " "
+//         },
+//         "repeat-icons": {
+//             "on": " "
+//         },
+//         "single-icons": {
+//             "on": "1 "
+//         },
+//         "state-icons": {
+//             "paused": "",
+//             "playing": ""
+//         },
+//         "tooltip-format": "MPD (connected)",
+//         "tooltip-format-disconnected": "MPD (disconnected)"
+//     },
+//     "idle_inhibitor": {
+//         "format": "{icon}",
+//         "format-icons": {
+//             "activated": "",
+//             "deactivated": ""
+//         }
+//     },
+//     "tray": {
+//         // "icon-size": 21,
+//         "spacing": 10,
+//         // "icons": {
+//         //   "blueman": "bluetooth",
+//         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+//         // }
+//     },
+//     "clock": {
+//         // "timezone": "America/New_York",
+//         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+//         "format-alt": "{:%Y-%m-%d}"
+//     },
+//     "cpu": {
+//         "format": "{usage}% ",
+//         "tooltip": false
+//     },
+//     "memory": {
+//         "format": "{}% "
+//     },
+//     "temperature": {
+//         // "thermal-zone": 2,
+//         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+//         "critical-threshold": 80,
+//         // "format-critical": "{temperatureC}°C {icon}",
+//         "format": "{temperatureC}°C {icon}",
+//         "format-icons": ["", "", ""]
+//     },
+//     "backlight": {
+//         // "device": "acpi_video1",
+//         "format": "{percent}% {icon}",
+//         "format-icons": ["", "", "", "", "", "", "", "", ""]
+//     },
+//     "battery": {
+//         "states": {
+//             // "good": 95,
+//             "warning": 30,
+//             "critical": 15
+//         },
+//         "format": "{capacity}% {icon}",
+//         "format-full": "{capacity}% {icon}",
+//         "format-charging": "{capacity}% ",
+//         "format-plugged": "{capacity}% ",
+//         "format-alt": "{time} {icon}",
+//         // "format-good": "", // An empty format will hide the module
+//         // "format-full": "",
+//         "format-icons": ["", "", "", "", ""]
+//     },
+//     "battery#bat2": {
+//         "bat": "BAT2"
+//     },
+//     "power-profiles-daemon": {
+//       "format": "{icon}",
+//       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+//       "tooltip": true,
+//       "format-icons": {
+//         "default": "",
+//         "performance": "",
+//         "balanced": "",
+//         "power-saver": ""
+//       }
+//     },
+//     "network": {
+//         // "interface": "wlp2*", // (Optional) To force the use of this interface
+//         "format-wifi": "{essid} ({signalStrength}%) ",
+//         "format-ethernet": "{ipaddr}/{cidr} ",
+//         "tooltip-format": "{ifname} via {gwaddr} ",
+//         "format-linked": "{ifname} (No IP) ",
+//         "format-disconnected": "Disconnected ⚠",
+//         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+//     },
+//     "pulseaudio": {
+//         // "scroll-step": 1, // %, can be a float
+//         "format": "{volume}% {icon} {format_source}",
+//         "format-bluetooth": "{volume}% {icon} {format_source}",
+//         "format-bluetooth-muted": " {icon} {format_source}",
+//         "format-muted": " {format_source}",
+//         "format-source": "{volume}% ",
+//         "format-source-muted": "",
+//         "format-icons": {
+//             "headphone": "",
+//             "hands-free": "",
+//             "headset": "",
+//             "phone": "",
+//             "portable": "",
+//             "car": "",
+//             "default": ["", "", ""]
+//         },
+//         "on-click": "pavucontrol"
+//     },
+//     "custom/media": {
+//         "format": "{icon} {text}",
+//         "return-type": "json",
+//         "max-length": 40,
+//         "format-icons": {
+//             "spotify": "",
+//             "default": "🎜"
+//         },
+//         "escape": true,
+//         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+//         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+//     },
+//     "custom/power": {
+//         "format" : "⏻ ",
+// 		"tooltip": false,
+// 		"menu": "on-click",
+// 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+// 		"menu-actions": {
+// 			"shutdown": "shutdown",
+// 			"reboot": "reboot",
+// 			"suspend": "systemctl suspend",
+// 			"hibernate": "systemctl hibernate"
+// 		}
+//     }
+// }
+// -*- mode: jsonc -*-
+//-----------------------------------------------------------------------------------
+//
+// 	,-----.
+//	|  |) /_  ,--,--.,--.--. ,---.
+// 	|  .-.  \' ,-.  ||  .--'(  .-'
+// 	|  '--' /\ '-'  ||  |   .-'  `)
+// 	`------'  `--`--'`--'   `----'
+//
+//
+//      , _ ,        RESUME: Waybar config to my main PC
+//     ( o o )
+//    /'` ' `'\
+//    |'''''''|      AUTHOR:  Andr3xDev
+//    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles
+//       """
+//------------------------------------------------------------------------------------
+[
+  //------------------------------------------------------------------------------------
+  //    Laptop Bar
+  //------------------------------------------------------------------------------------
+  {
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 100,
+    "margin-bottom": 0,
+    "margin-right": 100,
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+      "clock",
+      "hyprland/workspaces"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [],
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+      "custom/spotify",
+      "wireplumber",
+      "bluetooth",
+      "network",
+      "cpu",
+      "memory",
+      "battery"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "disable-select-unfocused": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "計", //calculate :3
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "九"
+      }
+    },
+    "clock": {
+      "format": " {:%a /%d /%m  │  %I:%M} ",
+      "tooltip-format": "{:%B of %Y}",
+      "on-click": "galendae"
+    },
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "bluetooth": {
+      "format": "󰂲",
+      "format-on": "",
+      "format-connected": " {num_connections}",
+      "tooltip-format": "{status}",
+      "tooltip-format-on": "{status}",
+      "tooltip-format-connected": "{device_alias}",
+      "on-click": "kitty --class bluetui -e bluetui",
+      "interval": 1
+    },
+    "memory": {
+      "interval": 1,
+      "format": "{}% "
+    },
+    "cpu": {
+      "format": "{usage}% ",
+      "interval": 1
+    },
+    "battery": {
+      "interval": 1,
+      "states": {
+        "good": 90,
+        "warning": 15,
+        "critical": 5
+      },
+      "format": "{capacity} {icon}",
+      "format-full": "{capacity} {icon}",
+      "format-charging": "{capacity} ",
+      "format-plugged": "{capacity} ",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "network": {
+      "format-wifi": "",
+      "format-disconnected": "⚠",
+      "on-click": "kitty --class nmtui -e nmtui",
+      "tooltip-format": "{essid}"
+    },
+    "wireplumber": {
+      "format": "{volume} {icon}",
+      "format-muted": "  ",
+      "format-icons": {
+        "default": [
+          " ",
+          " ",
+          " "
+        ]
+      },
+      "on-click-right": "pavucontrol",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/spotify": {
+      "exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+      "format": "{}  ",
+      "return-type": "json",
+      "on-click": "playerctl --player=spotify play-pause",
+      "on-double-click": "playerctl --player=spotify next",
+      "on-double-click-right": "playerctl --player=spotify previous"
+    }
+  },
+  //------------------------------------------------------------------------------------
+  //  Desktop Bar (main)
+  //------------------------------------------------------------------------------------
+  {
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 160,
+    "margin-bottom": 0,
+    "margin-right": 160,
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+      "clock",
+      "hyprland/workspaces"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [],
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+      "custom/spotify",
+      "wireplumber",
+      "bluetooth",
+      "network",
+      "cpu",
+      "memory"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "disable-select-unfocused": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "計", //calculate :3
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九"
+      }
+    },
+    "clock": {
+      "format": " {:%a /%d /%m  │  %I:%M} ",
+      "tooltip-format": "{:%B of %Y}",
+      "on-click": "galendae"
+    },
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "bluetooth": {
+      "format": "󰂲",
+      "format-on": "",
+      "format-connected": " {num_connections}",
+      "tooltip-format": "{status}",
+      "tooltip-format-on": "{status}",
+      "tooltip-format-connected": "{device_alias}",
+      "on-click": "kitty --class bluetui -e bluetui",
+      "interval": 1
+    },
+    "memory": {
+      "interval": 1,
+      "format": "{}% "
+    },
+    "cpu": {
+      "format": "{usage}% ",
+      "interval": 1
+    },
+    "network": {
+      "format-wifi": "",
+      "format-ethernet": "",
+      "format-disconnected": "⚠",
+      "on-click": "kitty --class nmtui -e nmtui",
+      "tooltip-format": "{essid}"
+    },
+    "wireplumber": {
+      "format": "{volume} {icon}",
+      "format-muted": "  ",
+      "format-icons": {
+        "default": [
+          " ",
+          " ",
+          " "
+        ]
+      },
+      "on-click-right": "pavucontrol",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/spotify": {
+      "exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+      "format": "{}  ",
+      "return-type": "json",
+      "on-click": "playerctl --player=spotify play-pause",
+      "on-double-click": "playerctl --player=spotify next",
+      "on-double-click-right": "playerctl --player=spotify previous"
+    }
+  },
+  //------------------------------------------------------------------------------------
+  //  Desktop Bar (second)
+  //------------------------------------------------------------------------------------
+  {
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "output": "DVI-D-1",
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 100,
+    "margin-bottom": 0,
+    "margin-right": 100,
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+      "clock",
+      "hyprland/workspaces"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [],
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+      "custom/spotify",
+      "wireplumber",
+      "bluetooth",
+      "network",
+      "cpu",
+      "memory"
+    ],
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "disable-select-unfocused": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "計", //calculate :3
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九"
+      }
+    },
+    "clock": {
+      "format": " {:%a /%d /%m  │  %I:%M} ",
+      "tooltip-format": "{:%B of %Y}",
+      "on-click": "galendae"
+    },
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "bluetooth": {
+      "format": "󰂲",
+      "format-on": "",
+      "format-connected": " {num_connections}",
+      "tooltip-format": "{status}",
+      "tooltip-format-on": "{status}",
+      "tooltip-format-connected": "{device_alias}",
+      "on-click": "kitty --class bluetui -e bluetui",
+      "interval": 1
+    },
+    "memory": {
+      "interval": 1,
+      "format": "{}% "
+    },
+    "cpu": {
+      "format": "{usage}% ",
+      "interval": 1
+    },
+    "network": {
+      "format-wifi": "",
+      "format-ethernet": "",
+      "format-disconnected": "⚠",
+      "on-click": "kitty --class nmtui -e nmtui",
+      "tooltip-format": "{essid}"
+    },
+    "wireplumber": {
+      "format": "{volume} {icon}",
+      "format-muted": "  ",
+      "format-icons": {
+        "default": [
+          " ",
+          " ",
+          " "
+        ]
+      },
+      "on-click-right": "pavucontrol",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/spotify": {
+      "exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+      "format": "{}  ",
+      "return-type": "json",
+      "on-click": "playerctl --player=spotify play-pause",
+      "on-double-click": "playerctl --player=spotify next",
+      "on-double-click-right": "playerctl --player=spotify previous"
+    }
+  }
+]

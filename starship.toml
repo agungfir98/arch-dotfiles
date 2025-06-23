@@ -1,0 +1,115 @@
+add_newline = false
+
+format = """$directory$character"""
+
+
+right_format = """$all"""
+
+[character]
+# Note the use of Catppuccin color 'maroon'
+# success_symbol = "[[♥](green) ❯](maroon)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format =  '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+commit_hash_length = 7
+format = '[\($hash$tag\)]($style) '
+tag_symbol = ' 🏷 '
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[golang]
+format = '[󰟓 ](cyan)'
+
+[nodejs]
+format = '[ ](green)'
+
+[directory]
+truncation_length = 4
+# Catppuccin 'lavender'
+style = "bold orange"
+
+# [palettes.catppuccin_mocha]
+# rosewater = "#f5e0dc"
+# flamingo = "#f2cdcd"
+# pink = "#f5c2e7"
+# mauve = "#cba6f7"
+# red = "#f38ba8"
+# maroon = "#eba0ac"
+# peach = "#fab387"
+# yellow = "#f9e2af"
+# green = "#a6e3a1"
+# teal = "#94e2d5"
+# sky = "#89dceb"
+# sapphire = "#74c7ec"
+# blue = "#89b4fa"
+# lavender = "#b4befe"
+# text = "#cdd6f4"
+# subtext1 = "#bac2de"
+# subtext0 = "#a6adc8"
+# overlay2 = "#9399b2"
+# overlay1 = "#7f849c"
+# overlay0 = "#6c7086"
+# surface2 = "#585b70"
+# surface1 = "#45475a"
+# surface0 = "#313244"
+# base = "#1e1e2e"
+# mantle = "#181825"
+# crust = "#11111b"
+
+[palettes.gruvbox]
+base00 = "32302f" # ----
+base01 = "3c3836" # ---
+base02 = "504945" # --
+base03 = "665c54" # -
+base04 = "bdae93" # +
+base05 = "d5c4a1" # ++
+base06 = "ebdbb2" # +++
+base07 = "fbf1c7" # ++++
+red = "fb4934" # red
+orange = "fe8019" # orange
+yellow = "fabd2f" # yellow
+green = "b8bb26" # green
+cyan = "8ec07c" # aqua/cyan
+blue = "83a598" # blue
+purple = "d3869b" # purple
+brown = "d65d0e" # brown
+
+[palettes.eink]
+background= "#CCCCCC"
+foreground= "#474747"
+cursor= "#333333"
+color0= "#CCCCCC"
+color1= "#474747"
+color2= "#666666"
+color3= "#999999"
+color4= "#333333"
+color5= "#808080"
+color6= "#AAAAAA"
+color7= "#555555"
+color8= "#222222"
+color9= "#B3B3B3"
+color10= "#3D3D3D"
+color11= "#E0E0E0"
+color12= "#1A1A1A"
+color13= "#999999"
+color14= "#666666"
+color15= "#F5F5F5"
