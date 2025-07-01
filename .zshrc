@@ -122,6 +122,9 @@ alias ta='tmux attach'
 alias tl='tmux list-sessions'
 alias tn='tmux new-session -s'
 
+alias lg='lazygit'
+alias ld='lazydocker'
+
 # fnm
 FNM_PATH="/home/gnoega/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
