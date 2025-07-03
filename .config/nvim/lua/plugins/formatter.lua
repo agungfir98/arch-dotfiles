@@ -12,7 +12,6 @@ return {
         html = { "prettier" },
         css = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
         astro = { "prettier" },
       },
     })
