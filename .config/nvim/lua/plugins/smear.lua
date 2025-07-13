@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   "sphamba/smear-cursor.nvim",
   event = "VeryLazy",
