@@ -111,7 +111,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 alias ls='exa'
-alias ll='exa -la --icons'
+alias ll='exa -l --icons'
 alias tree='eza -1A --group-directories-first --color=always --git-ignore --tree'
 alias vi='nvim'
 alias ff='nvim $(fzf -m --preview="bat --color=always {}")'
