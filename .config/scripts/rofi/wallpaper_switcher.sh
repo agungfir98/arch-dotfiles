@@ -1,13 +1,25 @@
 #!/usr/bin/env bash
 
-picture_list=$(find $HOME/Pictures/wallpaper/gruvbox -type f)
+wallpaper_dir="$HOME/Pictures/wallpaper/gruvbox"
+picture_list=$(find "$wallpaper_dir" -type f)
 
-chosen_picture=$(echo -e "$toggle\n$picture_list" | uniq -u | rofi -dmenu -i show-icons -selected-row 1 -p "Wallpaper: ")
+declare -A picture_map
 
-if [ -z "$chosen_picture" ]; then
+filename_list=""
+while IFS= read -r path; do
+  filename=$(basename "$path")
+  picture_map["$filename"]="$path"
+  filename_list+="$filename"$'\n'
+done <<<"$picture_list"
+
+chosen_filename=$(echo -e "${filename_list%$'\n'}" | rofi -dmenu -i -p "Wallpaper: ")
+
+if [ -z "$chosen_filename" ]; then
   exit
-else
-  notify-send "Setting wallpaper to $chosen_picture"
-
-  swww img $chosen_picture --transition-type any --transition-duration 2 --transition-fps=60
 fi
+
+chosen_wallpaper="${picture_map[$chosen_filename]}"
+
+notify-send "Setting wallpaper to $chosen_wallpaper"
+
+swww img $chosen_wallpaper --transition-type any --transition-duration 2 --transition-fps=60
