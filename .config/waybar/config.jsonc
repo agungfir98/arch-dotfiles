@@ -14,10 +14,10 @@
     // "group/expand",
     "custom/playerctl",
     "pulseaudio",
-    // "network",
     // "bluetooth",
     "backlight",
-    "tray",
+    // "tray",
+    "network",
     "battery",
     "custom/notification"
     // "custom/power"
