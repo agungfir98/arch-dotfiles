@@ -10,7 +10,7 @@ configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
 	location: 0;
-	font: "Hack Nerd Font 14";	
+	font: "JetBrains Mono Nerd Font 16";	
   
   /* for custom ones do Test:~/path/to/file */
   modi: "drun,window,ssh,emoji,filebrowser,nerdy";
@@ -75,7 +75,7 @@ entry {
 }
 
 inputbar {
-	background-image: url("~/Pictures/girl-3.png", width);
+	background-image: url("~/.config/rofi/girl-3.png", width);
 	padding: 180 0 0;
 	margin: 0 0 0 0;
 } 
