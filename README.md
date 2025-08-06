@@ -3,7 +3,7 @@
 ![preview](./.config/assets/current-setup.png)
 
 
-stuff I use
+stuff I use:
 
 + lazygit
 + gnu stow
