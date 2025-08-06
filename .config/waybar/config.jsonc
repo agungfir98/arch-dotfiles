@@ -16,7 +16,7 @@
     "pulseaudio",
     // "bluetooth",
     "backlight",
-    // "tray",
+    "tray",
     "network",
     "battery",
     "custom/notification"
